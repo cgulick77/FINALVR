@@ -13,21 +13,29 @@ public class Climber : MonoBehaviour
     private ClimableSurface climableSurface; 
     public float climbSpeed; 
     public List<XRController> climbingHands = new List<XRController>(); 
+
+    private PlayerGravity playerGravity;
      
     // Start is called before the first frame update 
     void Start() 
     { 
         controllerVelocity = FindObjectOfType<ControllerVelocity>(); 
         climableSurface = FindObjectOfType<ClimableSurface>(); 
+        playerGravity = GetComponent<PlayerGravity>();
     } 
  
     // Update is called once per frame 
-     void FixedUpdate() { 
+     void Update() { 
  
          if (hand) 
          { 
+             playerGravity.enabled = false;
              Climb(); 
          } 
+         else
+         {
+             playerGravity.enabled = true;
+         }
          
        
      } 
@@ -37,7 +45,7 @@ public class Climber : MonoBehaviour
     { 
         //Gets controllers velocity 
         Vector3 velocity = controllerVelocity ? controllerVelocity.velocity : Vector3.zero; 
-        character.Move(transform.rotation * -velocity * Time.deltaTime * climbSpeed); 
+        character.Move(transform.rotation * -velocity * Time.deltaTime ); 
     }    
  
      

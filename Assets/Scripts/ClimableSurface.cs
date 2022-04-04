@@ -8,6 +8,7 @@ public class ClimableSurface : XRGrabInteractable
 {
     private ControllerVelocity controllerVelocity = null;
     private Climber climber;
+    private PlayerGravity playerGravity;
     public bool entered;
 
     //  void Start() {
@@ -17,11 +18,14 @@ public class ClimableSurface : XRGrabInteractable
 
     //     List<IXRSelectInteractor> moreInteractors = interactorsSelecting;
     // }
+     void Start() {
+        climber = FindObjectOfType<Climber>();
+        playerGravity = FindObjectOfType<PlayerGravity>();
+    }
         protected override void Awake()
     {
         base.Awake();
-        climber = FindObjectOfType<Climber>();
-
+       
       
         
     }
@@ -30,17 +34,28 @@ public class ClimableSurface : XRGrabInteractable
     {
         base.OnSelectEntered(args);
         controllerVelocity = args.interactor.GetComponent<ControllerVelocity>();
-        climber.hand = args.interactor.GetComponent<XRController>();
+
+        
+             climber.hand = args.interactor.GetComponent<XRController>();
+        
+       
         //XRController controller = args.interactorObject;
-      
+      //Debug.Log("Enter");
 
     }
 
     protected override void OnSelectExited(SelectExitEventArgs args)
     {
         base.OnSelectExited(args);
-        controllerVelocity = null;
-         
+        //controllerVelocity = null;
+
+      
+             if (climber.hand && climber.hand.name == args.interactor.name)
+             {
+                 climber.hand = null;
+             }
+        
+         //Debug.Log("Exit");
     }
     
     public override void ProcessInteractable(XRInteractionUpdateOrder.UpdatePhase updatePhase)
@@ -53,6 +68,14 @@ public class ClimableSurface : XRGrabInteractable
             {
                 
                 climber.Climb();
+               playerGravity.enabled = false;
+                //Debug.Log(climber.hand.name);
+
+            }
+            else
+            {
+                playerGravity.enabled = true;
+                 //Debug.Log("Off");
             }
 
         }

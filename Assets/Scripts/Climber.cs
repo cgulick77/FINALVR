@@ -12,9 +12,8 @@ public class Climber : MonoBehaviour
     private ControllerVelocity controllerVelocity; 
     private ClimableSurface climableSurface; 
     public float climbSpeed; 
-    public List<XRController> climbingHands = new List<XRController>(); 
-
     private PlayerGravity playerGravity;
+    private LeftControllerVelocity leftControllerVelocity;
      
     // Start is called before the first frame update 
     void Start() 
@@ -22,30 +21,38 @@ public class Climber : MonoBehaviour
         controllerVelocity = FindObjectOfType<ControllerVelocity>(); 
         climableSurface = FindObjectOfType<ClimableSurface>(); 
         playerGravity = GetComponent<PlayerGravity>();
+        leftControllerVelocity =  FindObjectOfType<LeftControllerVelocity>();
     } 
  
     // Update is called once per frame 
-     void Update() { 
+     void FixedUpdate() { 
  
-         if (hand) 
-         { 
-             playerGravity.enabled = false;
-             Climb(); 
-         } 
-         else
-         {
-             playerGravity.enabled = true;
-         }
+        //  if (hand) 
+        //  { 
+        //      playerGravity.enabled = false;
+        //      //Climb(); 
+        //  } 
+        //  else
+        //  {
+        //      playerGravity.enabled = true;
+        //  }
          
        
      } 
  
  
-    public void Climb() 
+    public void RightClimb() 
     { 
         //Gets controllers velocity 
-        Vector3 velocity = controllerVelocity ? controllerVelocity.velocity : Vector3.zero; 
-        character.Move(transform.rotation * -velocity * Time.deltaTime ); 
+        Vector3 rightVelocity = controllerVelocity ? controllerVelocity.rightVelocity : Vector3.zero; 
+        character.Move(transform.rotation * -rightVelocity * Time.deltaTime ); 
+    }    
+
+     public void LeftClimb() 
+    { 
+        //Gets controllers velocity 
+        Vector3 leftVelocity = leftControllerVelocity ? leftControllerVelocity.leftVelocity : Vector3.zero; 
+        character.Move(transform.rotation * -leftVelocity * Time.deltaTime ); 
     }    
  
      

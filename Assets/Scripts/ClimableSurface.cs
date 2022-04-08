@@ -62,22 +62,22 @@ public class ClimableSurface : XRGrabInteractable
     {
         base.ProcessInteractable(updatePhase);
 
-        if (isSelected)
-        {
-            if(updatePhase == XRInteractionUpdateOrder.UpdatePhase.Dynamic)
-            {
+        // if (isSelected)
+        // {
+        //     if(updatePhase == XRInteractionUpdateOrder.UpdatePhase.Dynamic)
+        //     {
                 
-                climber.Climb();
-               playerGravity.enabled = false;
-                //Debug.Log(climber.hand.name);
+        //         climber.Climb();
+        //        playerGravity.enabled = false;
+        //         //Debug.Log(climber.hand.name);
 
-            }
-            else
-            {
-                playerGravity.enabled = true;
-                 //Debug.Log("Off");
-            }
+        //     }
+        //     else
+        //     {
+        //         playerGravity.enabled = true;
+        //          //Debug.Log("Off");
+        //     }
 
-        }
+        // }
     }
 }

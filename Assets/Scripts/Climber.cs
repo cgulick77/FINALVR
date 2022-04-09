@@ -44,15 +44,17 @@ public class Climber : MonoBehaviour
     public void RightClimb() 
     { 
         //Gets controllers velocity 
-        Vector3 rightVelocity = controllerVelocity ? controllerVelocity.rightVelocity : Vector3.zero; 
-        character.Move(transform.rotation * -rightVelocity * Time.deltaTime ); 
+        Vector3 rightVelocity = controllerVelocity.rightVelocity;
+        character.Move(transform.rotation * -rightVelocity * Time.fixedDeltaTime ); 
+        Debug.Log("Right: " + rightVelocity);
     }    
 
      public void LeftClimb() 
     { 
         //Gets controllers velocity 
-        Vector3 leftVelocity = leftControllerVelocity ? leftControllerVelocity.leftVelocity : Vector3.zero; 
-        character.Move(transform.rotation * -leftVelocity * Time.deltaTime ); 
+        Vector3 leftVelocity = leftControllerVelocity.leftVelocity;
+        character.Move(transform.rotation * -leftVelocity * Time.fixedDeltaTime ); 
+         //Debug.Log("Left");
     }    
  
      

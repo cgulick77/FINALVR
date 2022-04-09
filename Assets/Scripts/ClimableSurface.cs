@@ -9,7 +9,7 @@ public class ClimableSurface : XRGrabInteractable
     private ControllerVelocity controllerVelocity = null;
     private Climber climber;
     private PlayerGravity playerGravity;
-    public bool entered;
+    public bool hand;
 
     //  void Start() {
     //     XRBaseInteractor interactor = selectingInteractor;
@@ -62,22 +62,52 @@ public class ClimableSurface : XRGrabInteractable
     {
         base.ProcessInteractable(updatePhase);
 
-        // if (isSelected)
-        // {
-        //     if(updatePhase == XRInteractionUpdateOrder.UpdatePhase.Dynamic)
-        //     {
+        if (isSelected)
+        {
+        //    if (hand == true)
+        //    {
+        //        climber.RightClimb();
+        //    }
+        //    else if (hand == false)
+        //    {
+        //        climber.LeftClimb();
+        //    }
+            //if (IsSelectableBy)
+            climber.RightClimb();
+            //climber.LeftClimb();
+            if(updatePhase == XRInteractionUpdateOrder.UpdatePhase.Dynamic)
+            {
                 
-        //         climber.Climb();
-        //        playerGravity.enabled = false;
-        //         //Debug.Log(climber.hand.name);
+                //climber.RightClimb();
+                //climber.RightClimb();
+               //layerGravity.enabled = false;
+                //Debug.Log(climber.hand.name);
 
-        //     }
-        //     else
-        //     {
-        //         playerGravity.enabled = true;
-        //          //Debug.Log("Off");
-        //     }
+            }
+            else
+            {
+                //playerGravity.enabled = true;
+                 //Debug.Log("Off");
+            }
 
-        // }
+            
+
+        }
+
+        
     }
+
+     void OnTriggerEnter(Collider collider) {
+        if (collider.gameObject.CompareTag("Left"))
+        {
+            hand = false;
+        }
+
+        if (collider.gameObject.CompareTag("Right"))
+        {
+            hand = true;
+        }
+    }
+
+    
 }

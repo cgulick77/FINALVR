@@ -205,6 +205,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "LeftVelocity",
+                    "type": "Value",
+                    "id": "5f69ea99-36cb-47a4-8535-06a0cd00d364",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -570,6 +579,17 @@
                     "action": "UI Press Value",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "52fd87d5-f645-47ea-aef9-67bf911f9f37",
+                    "path": "<OculusTouchController>{LeftHand}/devicePose/velocity",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftVelocity",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -726,6 +746,15 @@
                     "type": "Value",
                     "id": "6f7cf253-7062-443b-b10f-2be48a33f027",
                     "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "RightVelocity",
+                    "type": "Value",
+                    "id": "5d8b2aa6-fc9c-43a0-bf20-d38a54452197",
+                    "expectedControlType": "Vector3",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -1083,52 +1112,15 @@
                     "action": "UI Press Value",
                     "isComposite": false,
                     "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "Velocity",
-            "id": "2877e509-413f-412c-8009-d73f3c493fcb",
-            "actions": [
-                {
-                    "name": "Right Velocity",
-                    "type": "Value",
-                    "id": "0f8453c8-96f2-45c9-a07f-14e4510ddb5a",
-                    "expectedControlType": "Vector3",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
                 },
                 {
-                    "name": "Left Velocity",
-                    "type": "Value",
-                    "id": "075d3a2b-8bf3-4556-97a6-a61a0b37fdbe",
-                    "expectedControlType": "Vector3",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                }
-            ],
-            "bindings": [
-                {
                     "name": "",
-                    "id": "058f0acb-15ed-4f94-ae67-121cb40caedc",
+                    "id": "3be84159-85d7-4335-bcbe-b6226b05b3b9",
                     "path": "<OculusTouchController>{RightHand}/devicePose/velocity",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Right Velocity",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4219a635-5feb-457a-ad9c-3fda5e05e7a6",
-                    "path": "<OculusTouchController>{LeftHand}/devicePose/velocity",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Left Velocity",
+                    "action": "RightVelocity",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

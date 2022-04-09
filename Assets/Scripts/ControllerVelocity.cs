@@ -9,7 +9,10 @@ public class ControllerVelocity : MonoBehaviour
 {
 
     public InputActionProperty velocityProperty;
-    public Vector3 velocity {get; private set;} = Vector3.zero;
+    //public InputActionProperty leftVelocity;
+    public Vector3 rightVelocity {get; private set;} = Vector3.zero;
+    //public CharacterController character; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,12 +22,9 @@ public class ControllerVelocity : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-          velocity = velocityProperty.action.ReadValue<Vector3>();
+          rightVelocity = velocityProperty.action.ReadValue<Vector3>();
           
     }
 
-    void bruh()
-    {
-        
-    }
+   
 }

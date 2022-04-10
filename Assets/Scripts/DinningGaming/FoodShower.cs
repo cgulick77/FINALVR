@@ -8,7 +8,7 @@ public class FoodShower : MonoBehaviour
     public GameObject tomato;
     public float coolDownTime = 1.0f;
     public bool loaded;
-    private bool onPlate;
+    public bool onPlate;
     public LayerMask groundLayer;
 
     // Start is called before the first frame update
@@ -36,5 +36,7 @@ public class FoodShower : MonoBehaviour
        {
            onPlate = true;
        }
+
+       
    }
 }

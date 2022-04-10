@@ -6,7 +6,9 @@ public class Plate : MonoBehaviour
 {
     public Transform parent;
     public GameObject[] foodPoints;
-    private int foodLocation = 0;
+    public int foodLocation = 0;
+    private bool posOne,posTwo,posThree;
+    public Collider plateCol;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,19 +23,20 @@ public class Plate : MonoBehaviour
 
     void OnTriggerEnter(Collider collider) {
         if (collider.CompareTag("Food")){
-            while (foodLocation <=2)
-            {
+           
                 collider.transform.SetParent(parent);
                 collider.transform.position = foodPoints[foodLocation].transform.position;
                 collider.attachedRigidbody.isKinematic = true;
                 collider.attachedRigidbody.useGravity = false;
+                collider.attachedRigidbody.detectCollisions = false;
+                foodLocation++;
 
-            }
-
-            foodLocation +=1;
-           
         }
+        
+        if (foodLocation >=3){
+            plateCol.isTrigger = false;
     }
+}
 }
 
 

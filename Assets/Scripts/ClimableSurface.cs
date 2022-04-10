@@ -73,8 +73,8 @@ public class ClimableSurface : XRGrabInteractable
         //        climber.LeftClimb();
         //    }
             //if (IsSelectableBy)
-            climber.RightClimb();
-            //climber.LeftClimb();
+            //climber.RightClimb();
+            climber.LeftClimb();
             if(updatePhase == XRInteractionUpdateOrder.UpdatePhase.Dynamic)
             {
                 

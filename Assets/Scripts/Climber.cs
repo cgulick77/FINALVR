@@ -14,6 +14,9 @@ public class Climber : MonoBehaviour
     public float climbSpeed; 
     private PlayerGravity playerGravity;
     private LeftControllerVelocity leftControllerVelocity;
+   
+    private bool canMove;
+    public float rightDis;
      
     // Start is called before the first frame update 
     void Start() 
@@ -44,9 +47,12 @@ public class Climber : MonoBehaviour
     public void RightClimb() 
     { 
         //Gets controllers velocity 
+       
         Vector3 rightVelocity = controllerVelocity.rightVelocity;
         character.Move(transform.rotation * -rightVelocity * Time.fixedDeltaTime ); 
-        Debug.Log("Right: " + rightVelocity);
+        //Debug.Log("Right: " + rightVelocity);
+        
+       
     }    
 
      public void LeftClimb() 
@@ -56,6 +62,8 @@ public class Climber : MonoBehaviour
         character.Move(transform.rotation * -leftVelocity * Time.fixedDeltaTime ); 
          //Debug.Log("Left");
     }    
+
+   
  
      
  

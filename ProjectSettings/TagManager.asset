@@ -8,6 +8,8 @@ TagManager:
   - Left
   - Axe
   - climbable
+  - Food
+  - Plate
   layers:
   - Default
   - TransparentFX

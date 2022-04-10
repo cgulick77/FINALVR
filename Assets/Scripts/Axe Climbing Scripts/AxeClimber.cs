@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class AxeClimber : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+
     public GameObject contactPoint;
+    public GameObject axeFront;
+    private List<GameObject> points = new List<GameObject>();
+
     void Start()
     {
         
@@ -21,6 +25,8 @@ public class AxeClimber : MonoBehaviour
         if (collider.CompareTag("climbable"))
         {
             Debug.Log("Hit");
+            Instantiate(contactPoint,axeFront.transform.position, axeFront.transform.rotation);
+            
         }
     }
 }

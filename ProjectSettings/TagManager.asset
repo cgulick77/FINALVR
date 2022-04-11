@@ -10,6 +10,7 @@ TagManager:
   - climbable
   - Food
   - Plate
+  - Floor
   layers:
   - Default
   - TransparentFX

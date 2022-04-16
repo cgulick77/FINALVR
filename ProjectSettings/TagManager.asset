@@ -11,6 +11,11 @@ TagManager:
   - Food
   - Plate
   - Floor
+  - Berry
+  - Coconut
+  - Eggplant
+  - Orange
+  - Tomato
   layers:
   - Default
   - TransparentFX

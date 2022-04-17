@@ -30,11 +30,17 @@ public class FoodShower : MonoBehaviour
        
        yield return new WaitForSeconds(coolDownTime);
         DirectionFiring();
+
+        // Angle used for firing the food
         angleForce = Random.Range(10, 40);
-       GameObject foodItem = Instantiate(food[2],showerHead.transform.position,showerHead.transform.rotation);
+
+        //Randomizes which food is selected for firing food
+        int foodRng = Random.Range(0,2);
+
+        //Instantiates the food item, gets rigidbody, adds force to object
+       GameObject foodItem = Instantiate(food[foodRng],showerHead.transform.position,showerHead.transform.rotation);
        Rigidbody foodRb = foodItem.GetComponent<Rigidbody>();
        foodRb.AddForce(forwardForce, angleForce,zForce,ForceMode.Impulse);
-       //foodItem.transform.position = Vector3.MoveTowards(foodItem.transform.position, target.transform.position, shootSpeed* Time.deltaTime);
        StartCoroutine(ShowerFood());
     
    }
@@ -48,6 +54,7 @@ public class FoodShower : MonoBehaviour
        
    }
 
+    //Changes the direction its firing depending on which settig is clicked.
    void DirectionFiring()
     {
        if (forwardDirection == true)

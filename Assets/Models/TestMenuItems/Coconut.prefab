@@ -126,3 +126,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objCollider: {fileID: 150989083816566207}
+  foodRb: {fileID: 6819486255883248363}

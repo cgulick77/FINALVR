@@ -106,9 +106,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5625715748009696847}
   serializedVersion: 2
-  m_Mass: 0.3
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 2.5
+  m_Drag: 2.5
+  m_AngularDrag: 0.8
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -127,6 +127,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objCollider: {fileID: 4684896448457711112}
+  foodRb: {fileID: 2143675095456080220}
+  angleForce: 15
+  forwardForce: 0
+  zForce: 0
+  leftDirection: 0
+  forwardDirection: 0
+  backwardDirection: 0
+  rightDirection: 0
+  currDirecton: 0
 --- !u!114 &8576356579280857729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,7 +143,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5625715748009696847}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 

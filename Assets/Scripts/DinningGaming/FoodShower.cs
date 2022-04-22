@@ -39,9 +39,11 @@ public class FoodShower : MonoBehaviour
 
         //Instantiates the food item, gets rigidbody, adds force to object
        GameObject foodItem = Instantiate(food[foodRng],showerHead.transform.position,showerHead.transform.rotation);
-       Rigidbody foodRb = foodItem.GetComponent<Rigidbody>();
-       foodRb.AddForce(forwardForce, angleForce,zForce,ForceMode.Impulse);
-       StartCoroutine(ShowerFood());
+        Rigidbody foodRb = foodItem.GetComponent<Rigidbody>();
+        foodRb.AddForce(forwardForce, angleForce,zForce,ForceMode.Impulse);
+        StartCoroutine(ShowerFood());
+       
+      
     
    }
 

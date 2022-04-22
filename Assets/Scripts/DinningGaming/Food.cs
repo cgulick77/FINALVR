@@ -5,9 +5,15 @@ using UnityEngine;
 public class Food : MonoBehaviour
 {
     public Collider objCollider;
+    public Rigidbody foodRb;
+    
+    
+    
     // Start is called before the first frame update
     void Start()
     {
+       
+       
         
     }
 
@@ -28,4 +34,6 @@ public class Food : MonoBehaviour
         }
 
     }
+
+    
 }

@@ -16,6 +16,9 @@ TagManager:
   - Eggplant
   - Orange
   - Tomato
+  - Steak
+  - Porkchop
+  - Kebab
   layers:
   - Default
   - TransparentFX

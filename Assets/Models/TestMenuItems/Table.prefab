@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 915177873830499820}
   m_Layer: 0
   m_Name: Table
-  m_TagString: Untagged
+  m_TagString: Table
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3390842290430809304}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.82, y: 0.797, z: 1.16}
   m_LocalScale: {x: 177.38103, y: 9.659436, z: 177.38103}
   m_Children:
@@ -114,11 +114,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuItems:
-  - {fileID: 8464992795069193710, guid: a44db115e32454646bb5110fc5da1ac8, type: 3}
-  - {fileID: 940967619566427640, guid: 0c2fbb07f752e534693feaf076300151, type: 3}
-  - {fileID: 373278387567811097, guid: 735d74d764dcf8b4e98e8b0ec8790718, type: 3}
-  - {fileID: 4447106180396762526, guid: 6c7c61a5412768d47a1874615db1781c, type: 3}
-  - {fileID: 180659696471845620, guid: cbb34f2a3ece4fc4cb26fa57394cbb43, type: 3}
+  - {fileID: 1033375333235551265, guid: 79f3d22ef59e5564e8ad0cecbc475b6f, type: 3}
+  - {fileID: 511324361637306097, guid: 613e71f23999a124292e99345a208526, type: 3}
+  - {fileID: 2818937204064129404, guid: c0c5c29e777472e4d979ebd1e9a72305, type: 3}
   spawnPoints:
   - {fileID: 8518855152080717339}
   - {fileID: 8518855152179684185}
@@ -127,7 +125,7 @@ MonoBehaviour:
   x: 0
   foodItem: 
   plateItems: 
-  requestedItems: 0000000000000000000000000000000000000000
+  requestedItems: 0000000000
 --- !u!1 &8518855151537973802
 GameObject:
   m_ObjectHideFlags: 0

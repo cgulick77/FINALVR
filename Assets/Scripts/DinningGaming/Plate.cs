@@ -22,21 +22,76 @@ public class Plate : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider collider) {
-        if (collider.CompareTag("Food")){
+        // if (collider.CompareTag("Food")){
            
+        //         collider.transform.SetParent(parent);
+        //         collider.transform.position = foodPoints[foodLocation].transform.position;
+        //         collider.attachedRigidbody.isKinematic = true;
+        //         collider.attachedRigidbody.useGravity = false;
+        //         collider.attachedRigidbody.detectCollisions = false;
+        //         foodLocation++;
+
+        // }
+        
+    switch(collider.tag){
+            case "Kebab":
+
                 collider.transform.SetParent(parent);
                 collider.transform.position = foodPoints[foodLocation].transform.position;
-                collider.attachedRigidbody.isKinematic = true;
-                collider.attachedRigidbody.useGravity = false;
-                collider.attachedRigidbody.detectCollisions = false;
+                collider.gameObject.transform.position = foodPoints[foodLocation].transform.position;
+                // collider.attachedRigidbody.isKinematic = true;
+                // collider.attachedRigidbody.useGravity = false;
+                // collider.attachedRigidbody.detectCollisions = false;
                 foodLocation++;
 
-        }
-        
-        if (foodLocation >=3){
-            plateCol.isTrigger = false;
-    }
+            break;
+            case "Porkchop":
+                collider.transform.SetParent(parent);
+                collider.transform.position = foodPoints[foodLocation].transform.position;
+                collider.gameObject.transform.position = foodPoints[foodLocation].transform.position;
+                // collider.attachedRigidbody.isKinematic = true;
+                // collider.attachedRigidbody.useGravity = false;
+                // collider.attachedRigidbody.detectCollisions = false;
+                foodLocation++;
+            break;
+            case "Steak":
+                 collider.transform.SetParent(parent);
+                collider.transform.position = foodPoints[foodLocation].transform.position;
+                collider.gameObject.transform.position = foodPoints[foodLocation].transform.position;
+                // collider.attachedRigidbody.isKinematic = true;
+                // collider.attachedRigidbody.useGravity = false;
+                // collider.attachedRigidbody.detectCollisions = false;
+                foodLocation++;
+            break;
+            case "Orange":
+                collider.transform.SetParent(parent);
+                collider.transform.position = foodPoints[foodLocation].transform.position;
+                collider.gameObject.transform.position = foodPoints[foodLocation].transform.position;
+                // collider.attachedRigidbody.isKinematic = true;
+                // collider.attachedRigidbody.useGravity = false;
+                // collider.attachedRigidbody.detectCollisions = false;
+                foodLocation++;
+            break;
+            case "Tomato":
+              collider.transform.SetParent(parent);
+                collider.transform.position = foodPoints[foodLocation].transform.position;
+                collider.gameObject.transform.position = foodPoints[foodLocation].transform.position;
+                // collider.attachedRigidbody.isKinematic = true;
+                // collider.attachedRigidbody.useGravity = false;
+                // collider.attachedRigidbody.detectCollisions = false;
+                foodLocation++;
+            break;
+            default:
+            
+            break;
 }
+
+        if (foodLocation >=3){
+                    plateCol.isTrigger = false;
+            }
+
+        }
+
 }
 
 

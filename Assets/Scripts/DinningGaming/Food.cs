@@ -6,6 +6,7 @@ public class Food : MonoBehaviour
 {
     public Collider objCollider;
     public Rigidbody foodRb;
+    public Collider secondCol;
     
     
     
@@ -27,11 +28,20 @@ public class Food : MonoBehaviour
         if(collider.CompareTag("Plate"))
         {
             objCollider.enabled = false;
+            foodRb.isKinematic = true;
+            foodRb.useGravity = false;
+            secondCol.enabled = true;
+
         }
         if (collider.CompareTag("Floor"))
         {
             Destroy(gameObject);
         }
+        if (collider.CompareTag("Table"))
+        {
+            objCollider.enabled = true;
+        }
+
 
     }
 

@@ -11,6 +11,7 @@ public class Table : MonoBehaviour
     public int x;
     public string foodItem, plateItems;
     public List<bool> requestedItems = new List<bool>();
+    public GameObject checkMark;
 
 
     // Start is called before the first frame update
@@ -30,13 +31,13 @@ public class Table : MonoBehaviour
     private void OnTriggerEnter(Collider collider) {
        //Checks If the items on the plate are the correct items.
             switch(collider.tag){
-                  case "Berry":
+                  case "Kebab":
             requestedItems[0] = false;
             break;
-            case "Coconut":
+            case "Porkchop":
             requestedItems[1] = false;
             break;
-            case "Eggplant":
+            case "Steak":
             requestedItems[2] = false;
             break;
             case "Orange":
@@ -52,12 +53,14 @@ public class Table : MonoBehaviour
     // Randomizes Order, Shows order rotating above the table
     void GenerateOrder()
     {
-        
-        for (x=0;x<3;x++)
+        //Gemerates the number of food items the table wants
+        int numFoodItems = Random.Range(1,3);
+
+        for (x=0;x<numFoodItems;x++)
         {
             GameObject item;
             
-            int randomOrder = Random.Range(0,5);
+            int randomOrder = Random.Range(0,menuItems.Length);
 
            item = Instantiate(menuItems[randomOrder], spawnPoints[x].transform.position, spawnPoints[x].transform.rotation);
            item.transform.SetParent(spawnPoints[x].transform);
@@ -82,13 +85,13 @@ public class Table : MonoBehaviour
     {
         
         switch(foodItem){
-            case "Berry":
+            case "Kebab":
             requestedItems[0] = true;
             break;
-            case "Coconut":
+            case "Porkchop":
             requestedItems[1] = true;
             break;
-            case "Eggplant":
+            case "Steak":
             requestedItems[2] = true;
             break;
             case "Orange":
@@ -106,6 +109,29 @@ public class Table : MonoBehaviour
         if(!requestedItems.Contains(true))
         {
             Debug.Log("Order Complete");
+            deleteIcons();
+            checkMark.gameObject.SetActive(true);
         }
+    }
+
+    // Checks if the spawnpoint has a child, if true destroy
+    void deleteIcons()
+    {
+        if (spawnPoints[0].transform.childCount > 0)
+        {
+             Destroy(spawnPoints[0].transform.GetChild(0).gameObject);
+        }
+        
+        if (spawnPoints[1].transform.childCount > 0)
+        {
+             Destroy(spawnPoints[1].transform.GetChild(0).gameObject);
+        }
+        
+        if (spawnPoints[2].transform.childCount > 0)
+        {
+             Destroy(spawnPoints[2].transform.GetChild(0).gameObject);
+        }
+       
+       
     }
 }

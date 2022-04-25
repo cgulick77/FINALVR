@@ -10,7 +10,6 @@ public class FoodShower : MonoBehaviour
     public bool loaded;
     public bool onPlate;
     public LayerMask groundLayer;
-    private float shootSpeed = 25f;
     public bool leftDirection, forwardDirection, backwardDirection, rightDirection, currDirecton;
     private float angleForce, forwardForce, zForce;
 
@@ -32,10 +31,10 @@ public class FoodShower : MonoBehaviour
         DirectionFiring();
 
         // Angle used for firing the food
-        angleForce = Random.Range(10, 40);
+        angleForce = Random.Range(20, 30);
 
         //Randomizes which food is selected for firing food
-        int foodRng = Random.Range(0,2);
+        int foodRng = Random.Range(0,food.Length);
 
         //Instantiates the food item, gets rigidbody, adds force to object
        GameObject foodItem = Instantiate(food[foodRng],showerHead.transform.position,showerHead.transform.rotation);
@@ -51,9 +50,7 @@ public class FoodShower : MonoBehaviour
        if(collider.CompareTag("Plate"))
        {
            onPlate = true;
-       }
-
-       
+       } 
    }
 
     //Changes the direction its firing depending on which settig is clicked.
@@ -61,22 +58,22 @@ public class FoodShower : MonoBehaviour
     {
        if (forwardDirection == true)
        {
-             forwardForce = Random.Range(35,70);
+             forwardForce = Random.Range(40,70);
              zForce = Random.Range(0,0);
        }
         if (backwardDirection == true)
        {
-            forwardForce = Random.Range(-35,-70);
+            forwardForce = Random.Range(-40,-70);
             zForce = Random.Range(0,0);
        }
         if (leftDirection == true)
        {
-            zForce = Random.Range(35,70);
+            zForce = Random.Range(40,70);
             forwardForce = Random.Range(0,0);
        }
         if (rightDirection == true)
        {
-            zForce = Random.Range(-35,-70);
+            zForce = Random.Range(-40,-70);
             forwardForce = Random.Range(0,0);
        }
             

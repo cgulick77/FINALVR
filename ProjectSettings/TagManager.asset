@@ -16,6 +16,10 @@ TagManager:
   - Eggplant
   - Orange
   - Tomato
+  - Steak
+  - Porkchop
+  - Kebab
+  - Table
   layers:
   - Default
   - TransparentFX
@@ -24,7 +28,7 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
+  - Food
   - 
   - 
   - 

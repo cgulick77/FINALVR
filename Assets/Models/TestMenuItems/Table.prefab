@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3751020653888648461}
   - component: {fileID: 3108847058726582203}
   - component: {fileID: 915177873830499820}
+  - component: {fileID: 634276297}
   m_Layer: 0
   m_Name: Table
   m_TagString: Table
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 3390842290430809304}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.82, y: 0.797, z: 1.16}
-  m_LocalScale: {x: 177.38103, y: 9.659436, z: 177.38103}
+  m_LocalScale: {x: 177.38103, y: 9.659435, z: 177.38104}
   m_Children:
   - {fileID: 8518855151537973803}
   - {fileID: 8518855152080717336}
@@ -126,6 +127,19 @@ MonoBehaviour:
   foodItem: 
   plateItems: 
   requestedItems: 0000000000
+--- !u!65 &634276297
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3390842290430809304}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01655735, z: 0.010000001}
+  m_Center: {x: 3.3602604e-10, y: 0.013208434, z: 0}
 --- !u!1 &8518855151537973802
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ public class Table : MonoBehaviour
     public int x;
     public string foodItem, plateItems;
     public List<bool> requestedItems = new List<bool>();
+    public GameObject checkMark;
 
 
     // Start is called before the first frame update
@@ -109,6 +110,7 @@ public class Table : MonoBehaviour
         {
             Debug.Log("Order Complete");
             deleteIcons();
+            checkMark.gameObject.SetActive(true);
         }
     }
 

@@ -81,6 +81,9 @@ public class Plate : MonoBehaviour
                 // collider.attachedRigidbody.detectCollisions = false;
                 foodLocation++;
             break;
+            default:
+            
+            break;
 }
 
         if (foodLocation >=3){

@@ -8,16 +8,19 @@ public class Table : MonoBehaviour
     public GameObject[] spawnPoints;
     public GameObject rotateAround;
     private float rotateSpeed = 80;
+    public float orderTime = 10;
     public int x;
     public string foodItem, plateItems;
     public List<bool> requestedItems = new List<bool>();
     public GameObject checkMark;
+    public bool orderCompleted = false, orderFailed;
 
 
     // Start is called before the first frame update
     void Start()
     {
         GenerateOrder();
+        StartCoroutine(OrderTimer());
     }
 
     // Update is called once per frame
@@ -70,6 +73,7 @@ public class Table : MonoBehaviour
          CheckOrderFoods();
         }
         
+        
 
     }
 
@@ -106,8 +110,10 @@ public class Table : MonoBehaviour
     //Checks if all the items are all taken
     void OrderComplete()
     {
+        
         if(!requestedItems.Contains(true))
         {
+            orderCompleted = true;
             Debug.Log("Order Complete");
             deleteIcons();
             checkMark.gameObject.SetActive(true);
@@ -133,5 +139,17 @@ public class Table : MonoBehaviour
         }
        
        
+    }
+
+    IEnumerator OrderTimer()
+    {
+        yield return new WaitForSeconds(orderTime);
+        if(orderCompleted == false)
+        {
+            orderFailed = true;
+            Debug.Log("Order Failed");
+        }
+        
+
     }
 }

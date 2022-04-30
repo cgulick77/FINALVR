@@ -123,17 +123,17 @@ public class Table : MonoBehaviour
     // Checks if the spawnpoint has a child, if true destroy
     void deleteIcons()
     {
-        if (spawnPoints[0].transform.childCount > 0)
+        if (spawnPoints[0].transform.childCount > 0 || orderFailed == true)
         {
              Destroy(spawnPoints[0].transform.GetChild(0).gameObject);
         }
         
-        if (spawnPoints[1].transform.childCount > 0)
+        if (spawnPoints[1].transform.childCount > 0 || orderFailed == true)
         {
              Destroy(spawnPoints[1].transform.GetChild(0).gameObject);
         }
         
-        if (spawnPoints[2].transform.childCount > 0)
+        if (spawnPoints[2].transform.childCount > 0 || orderFailed == true)
         {
              Destroy(spawnPoints[2].transform.GetChild(0).gameObject);
         }

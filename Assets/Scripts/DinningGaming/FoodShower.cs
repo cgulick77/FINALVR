@@ -16,16 +16,16 @@ public class FoodShower : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+       if (playerNearStand == true)
+      {
+           StartCoroutine(ShowerFood());
+      }
     }
 
     // Update is called once per frame
     void Update()
     {
-      if (playerNearStand == true)
-      {
-           StartCoroutine(ShowerFood());
-      }
+      
     }
    IEnumerator ShowerFood()
    {

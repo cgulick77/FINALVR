@@ -8,15 +8,18 @@ public class FoodShower : MonoBehaviour
     public GameObject[] food;
     public float coolDownTime = .7f;
     public bool loaded;
-    public bool onPlate;
+    public bool onPlate, playerNearStand;
     public LayerMask groundLayer;
     public bool leftDirection, forwardDirection, backwardDirection, rightDirection, currDirecton;
     private float angleForce, forwardForce, zForce;
-
+    
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(ShowerFood());
+       if (playerNearStand == true)
+      {
+           StartCoroutine(ShowerFood());
+      }
     }
 
     // Update is called once per frame
@@ -51,6 +54,11 @@ public class FoodShower : MonoBehaviour
        {
            onPlate = true;
        } 
+
+       if (collider.CompareTag("Player"))
+       {
+           playerNearStand = true;
+       }
    }
 
     //Changes the direction its firing depending on which settig is clicked.
@@ -58,22 +66,22 @@ public class FoodShower : MonoBehaviour
     {
        if (forwardDirection == true)
        {
-             forwardForce = Random.Range(40,70);
+             forwardForce = Random.Range(50,70);
              zForce = Random.Range(0,0);
        }
         if (backwardDirection == true)
        {
-            forwardForce = Random.Range(-40,-70);
+            forwardForce = Random.Range(-45,-70);
             zForce = Random.Range(0,0);
        }
         if (leftDirection == true)
        {
-            zForce = Random.Range(40,70);
+            zForce = Random.Range(50,70);
             forwardForce = Random.Range(0,0);
        }
         if (rightDirection == true)
        {
-            zForce = Random.Range(-40,-70);
+            zForce = Random.Range(-50,-70);
             forwardForce = Random.Range(0,0);
        }
             

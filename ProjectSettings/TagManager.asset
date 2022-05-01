@@ -20,6 +20,16 @@ TagManager:
   - Porkchop
   - Kebab
   - Table
+  - Squid
+  - Salmon
+  - Sushi
+  - Coffee
+  - Lemonade
+  - Water
+  - Cake
+  - Pie
+  - IceCream
+  - Card
   layers:
   - Default
   - TransparentFX

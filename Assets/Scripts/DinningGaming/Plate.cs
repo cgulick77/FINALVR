@@ -9,6 +9,7 @@ public class Plate : MonoBehaviour
     public int foodLocation = 0;
     private bool posOne,posTwo,posThree;
     public Collider plateCol;
+    public bool[] foodOnPlate;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,17 +23,8 @@ public class Plate : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider collider) {
-        // if (collider.CompareTag("Food")){
-           
-        //         collider.transform.SetParent(parent);
-        //         collider.transform.position = foodPoints[foodLocation].transform.position;
-        //         collider.attachedRigidbody.isKinematic = true;
-        //         collider.attachedRigidbody.useGravity = false;
-        //         collider.attachedRigidbody.detectCollisions = false;
-        //         foodLocation++;
-
-        // }
-        
+    if (foodLocation <= 3)
+    {
     switch(collider.tag){
             case "Kebab":
 
@@ -81,9 +73,99 @@ public class Plate : MonoBehaviour
                 // collider.attachedRigidbody.detectCollisions = false;
                 foodLocation++;
             break;
+             case "Salmon":
+
+                collider.transform.SetParent(parent);
+                collider.transform.position = foodPoints[foodLocation].transform.position;
+                collider.gameObject.transform.position = foodPoints[foodLocation].transform.position;
+                // collider.attachedRigidbody.isKinematic = true;
+                // collider.attachedRigidbody.useGravity = false;
+                // collider.attachedRigidbody.detectCollisions = false;
+                foodLocation++;
+
+            break;
+             case "Sushi":
+
+                collider.transform.SetParent(parent);
+                collider.transform.position = foodPoints[foodLocation].transform.position;
+                collider.gameObject.transform.position = foodPoints[foodLocation].transform.position;
+                // collider.attachedRigidbody.isKinematic = true;
+                // collider.attachedRigidbody.useGravity = false;
+                // collider.attachedRigidbody.detectCollisions = false;
+                foodLocation++;
+
+            break;
+             case "Squid":
+
+                collider.transform.SetParent(parent);
+                collider.transform.position = foodPoints[foodLocation].transform.position;
+                collider.gameObject.transform.position = foodPoints[foodLocation].transform.position;
+                // collider.attachedRigidbody.isKinematic = true;
+                // collider.attachedRigidbody.useGravity = false;
+                // collider.attachedRigidbody.detectCollisions = false;
+                foodLocation++;
+
+            break;
+             case "Lemonade":
+
+                collider.transform.SetParent(parent);
+                collider.transform.position = foodPoints[foodLocation].transform.position;
+                collider.gameObject.transform.position = foodPoints[foodLocation].transform.position;
+                // collider.attachedRigidbody.isKinematic = true;
+                // collider.attachedRigidbody.useGravity = false;
+                // collider.attachedRigidbody.detectCollisions = false;
+                foodLocation++;
+
+            break;
+             case "Water":
+
+                collider.transform.SetParent(parent);
+                collider.transform.position = foodPoints[foodLocation].transform.position;
+                collider.gameObject.transform.position = foodPoints[foodLocation].transform.position;
+                // collider.attachedRigidbody.isKinematic = true;
+                // collider.attachedRigidbody.useGravity = false;
+                // collider.attachedRigidbody.detectCollisions = false;
+                foodLocation++;
+
+            break;
+             case "Cake":
+
+                collider.transform.SetParent(parent);
+                collider.transform.position = foodPoints[foodLocation].transform.position;
+                collider.gameObject.transform.position = foodPoints[foodLocation].transform.position;
+                // collider.attachedRigidbody.isKinematic = true;
+                // collider.attachedRigidbody.useGravity = false;
+                // collider.attachedRigidbody.detectCollisions = false;
+                foodLocation++;
+
+            break;
+             case "Pie":
+
+                collider.transform.SetParent(parent);
+                collider.transform.position = foodPoints[foodLocation].transform.position;
+                collider.gameObject.transform.position = foodPoints[foodLocation].transform.position;
+                // collider.attachedRigidbody.isKinematic = true;
+                // collider.attachedRigidbody.useGravity = false;
+                // collider.attachedRigidbody.detectCollisions = false;
+                foodLocation++;
+
+            break;
+             case "IceCream":
+
+                collider.transform.SetParent(parent);
+                collider.transform.position = foodPoints[foodLocation].transform.position;
+                collider.gameObject.transform.position = foodPoints[foodLocation].transform.position;
+                // collider.attachedRigidbody.isKinematic = true;
+                // collider.attachedRigidbody.useGravity = false;
+                // collider.attachedRigidbody.detectCollisions = false;
+                foodLocation++;
+
+            break;
+
             default:
             
             break;
+    }
 }
 
         if (foodLocation >=3){

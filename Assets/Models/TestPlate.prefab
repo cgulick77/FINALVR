@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8771288135985347430}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FoodPoint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3769822912943498074}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FoodPoint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5819077980759861312}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FoodPoint3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 6163695007221845812}
   - component: {fileID: 1826078122316520515}
   - component: {fileID: 960518278322630154}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,6 +154,7 @@ MonoBehaviour:
   - {fileID: 4737693403640685606}
   foodLocation: 0
   plateCol: {fileID: 1826078122316520515}
+  foodOnPlate: 
 --- !u!1 &7574806497765088010
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,7 +164,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5719674182509601827}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HandHold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +202,7 @@ GameObject:
   - component: {fileID: 455430037}
   - component: {fileID: 2324004271854067584}
   - component: {fileID: 1344494502}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TestPlate
   m_TagString: Plate
   m_Icon: {fileID: 0}
@@ -217,7 +218,7 @@ Transform:
   m_GameObject: {fileID: 8546843837204445161}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.254, y: 0.566, z: 1.111}
-  m_LocalScale: {x: 25.01834, y: 1.290944, z: 25.01834}
+  m_LocalScale: {x: 25.01834, y: 0.23903118, z: 25.01834}
   m_Children:
   - {fileID: 5719674182509601827}
   - {fileID: 3769822912943498074}
@@ -234,7 +235,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8546843837204445161}
-  m_Mesh: {fileID: 3516167212823102259, guid: f4ec28c8281df2c4d942c2c790e85aaa, type: 3}
+  m_Mesh: {fileID: -8005813826498288447, guid: af6abb544ac32e744b95e60c797f7e3d, type: 3}
 --- !u!23 &7898330095379617340
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -454,6 +455,7 @@ MonoBehaviour:
   - {fileID: 4737693403640685606}
   foodLocation: 0
   plateCol: {fileID: 1826078122316520515}
+  foodOnPlate: 
 --- !u!64 &1344494502
 MeshCollider:
   m_ObjectHideFlags: 0

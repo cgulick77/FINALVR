@@ -12,7 +12,7 @@ public class FoodShower : MonoBehaviour
     public LayerMask groundLayer;
     public bool leftDirection, forwardDirection, backwardDirection, rightDirection, currDirecton;
     private float angleForce, forwardForce, zForce;
-
+    
     // Start is called before the first frame update
     void Start()
     {

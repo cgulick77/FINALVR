@@ -8,7 +8,7 @@ public class Table : MonoBehaviour
     public GameObject[] spawnPoints;
     public GameObject rotateAround;
     private float rotateSpeed = 80;
-    public float orderTime = 10;
+    public float orderTime = 30;
     public int x;
     public string foodItem, plateItems;
     public List<bool> requestedItems = new List<bool>();
@@ -29,6 +29,7 @@ public class Table : MonoBehaviour
         
         RotateOrderVisuals();
         OrderComplete();
+
     }
 
     private void OnTriggerEnter(Collider collider) {
@@ -147,6 +148,7 @@ public class Table : MonoBehaviour
         if(orderCompleted == false)
         {
             orderFailed = true;
+            Destroy(gameObject);
             Debug.Log("Order Failed");
         }
         

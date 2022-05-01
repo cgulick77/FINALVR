@@ -118,10 +118,8 @@ public class Table : MonoBehaviour
             //Debug.Log("Order Complete");
             deleteIcons();
             checkMark.gameObject.SetActive(true);
-            if (orderGenerated == false)
-            {
-            StartCoroutine(OrderCooldown());
-            }
+            //StartCoroutine(OrderCooldown());
+        
         }
     }
 
@@ -152,28 +150,14 @@ public class Table : MonoBehaviour
         if(orderCompleted == false)
         {
             orderFailed = true;
-            //Destroy(gameObject);
-            deleteIcons();
-            Debug.Log("Order Failed");
-            orderGenerated = false;
-             StartCoroutine(OrderCooldown());
+            //deleteIcons();
+            Destroy(gameObject);
+            //Debug.Log("Order Failed");
+             //StartCoroutine(OrderCooldown());
         }
         
 
     }
 
-    IEnumerator OrderCooldown()
-    {
-        timeBetweenOrder = Random.Range(2,6);
-        yield return new WaitForSeconds(timeBetweenOrder);
-        checkMark.gameObject.SetActive(false);
-        orderCompleted = false;
-        if (orderGenerated == false)
-        {
-        GenerateOrder();
-        orderGenerated = true;
-        }
-        //StartCoroutine(OrderTimer());
-        
-    }
+   
 }

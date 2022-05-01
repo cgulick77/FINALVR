@@ -16,10 +16,10 @@ public class FoodShower : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       if (playerNearStand == true)
-      {
+       
+      
            StartCoroutine(ShowerFood());
-      }
+      
     }
 
     // Update is called once per frame
@@ -55,10 +55,10 @@ public class FoodShower : MonoBehaviour
            onPlate = true;
        } 
 
-       if (collider.CompareTag("Player"))
-       {
-           playerNearStand = true;
-       }
+     //   if (collider.CompareTag("Player"))
+     //   {
+     //       playerNearStand = true;
+     //   }
    }
 
     //Changes the direction its firing depending on which settig is clicked.

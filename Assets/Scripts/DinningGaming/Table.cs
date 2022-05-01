@@ -8,19 +8,18 @@ public class Table : MonoBehaviour
     public GameObject[] spawnPoints;
     public GameObject rotateAround;
     private float rotateSpeed = 80;
-    public float orderTime = 30;
+    public float orderTime = 30, numberOfOrders = 5, timeBetweenOrder;
     public int x;
     public string foodItem, plateItems;
     public List<bool> requestedItems = new List<bool>();
     public GameObject checkMark;
-    public bool orderCompleted = false, orderFailed;
+    public bool orderCompleted = false, orderFailed, orderGenerated;
 
 
     // Start is called before the first frame update
     void Start()
     {
         GenerateOrder();
-        StartCoroutine(OrderTimer());
     }
 
     // Update is called once per frame
@@ -74,6 +73,7 @@ public class Table : MonoBehaviour
          CheckOrderFoods();
         }
         
+        StartCoroutine(OrderTimer());
         
 
     }
@@ -115,9 +115,13 @@ public class Table : MonoBehaviour
         if(!requestedItems.Contains(true))
         {
             orderCompleted = true;
-            Debug.Log("Order Complete");
+            //Debug.Log("Order Complete");
             deleteIcons();
             checkMark.gameObject.SetActive(true);
+            if (orderGenerated == false)
+            {
+            StartCoroutine(OrderCooldown());
+            }
         }
     }
 
@@ -148,10 +152,28 @@ public class Table : MonoBehaviour
         if(orderCompleted == false)
         {
             orderFailed = true;
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            deleteIcons();
             Debug.Log("Order Failed");
+            orderGenerated = false;
+             StartCoroutine(OrderCooldown());
         }
         
 
+    }
+
+    IEnumerator OrderCooldown()
+    {
+        timeBetweenOrder = Random.Range(2,6);
+        yield return new WaitForSeconds(timeBetweenOrder);
+        checkMark.gameObject.SetActive(false);
+        orderCompleted = false;
+        if (orderGenerated == false)
+        {
+        GenerateOrder();
+        orderGenerated = true;
+        }
+        //StartCoroutine(OrderTimer());
+        
     }
 }

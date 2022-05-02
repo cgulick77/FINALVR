@@ -124,7 +124,9 @@ MonoBehaviour:
   - {fileID: 8518855152179684185}
   - {fileID: 8518855151554995237}
   rotateAround: {fileID: 8518855151537973802}
-  orderTime: 10
+  orderTime: 30
+  numberOfOrders: 5
+  timeBetweenOrder: 0
   x: 0
   foodItem: 
   plateItems: 
@@ -132,6 +134,7 @@ MonoBehaviour:
   checkMark: {fileID: 7332409698407434604}
   orderCompleted: 0
   orderFailed: 0
+  orderGenerated: 0
 --- !u!65 &634276297
 BoxCollider:
   m_ObjectHideFlags: 0

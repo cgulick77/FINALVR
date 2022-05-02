@@ -12,8 +12,9 @@ public class Table : MonoBehaviour
     public int x;
     public string foodItem, plateItems;
     public List<bool> requestedItems = new List<bool>();
-    public GameObject checkMark;
+    public GameObject checkMark, incorrectMark;
     public bool orderCompleted = false, orderFailed, orderGenerated;
+    public Collider boxColl;
 
 
     // Start is called before the first frame update
@@ -118,7 +119,7 @@ public class Table : MonoBehaviour
             //Debug.Log("Order Complete");
             deleteIcons();
             checkMark.gameObject.SetActive(true);
-            //StartCoroutine(OrderCooldown());
+            StartCoroutine(OrderCompletedTimer());
         
         }
     }
@@ -149,14 +150,20 @@ public class Table : MonoBehaviour
         yield return new WaitForSeconds(orderTime);
         if(orderCompleted == false)
         {
+            boxColl.isTrigger = false;
             orderFailed = true;
             //deleteIcons();
-            Destroy(gameObject);
+            incorrectMark.gameObject.SetActive(true);
+            StartCoroutine(OrderCompletedTimer());
             //Debug.Log("Order Failed");
              //StartCoroutine(OrderCooldown());
         }
-        
+    }
 
+    IEnumerator OrderCompletedTimer()
+    {
+        yield return new WaitForSeconds(5);
+        Destroy(gameObject);
     }
 
    

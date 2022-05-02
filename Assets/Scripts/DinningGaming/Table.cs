@@ -12,8 +12,9 @@ public class Table : MonoBehaviour
     public int x;
     public string foodItem, plateItems;
     public List<bool> requestedItems = new List<bool>();
-    public GameObject checkMark;
+    public GameObject checkMark, incorrectMark;
     public bool orderCompleted = false, orderFailed, orderGenerated;
+    public Collider boxColl;
 
 
     // Start is called before the first frame update
@@ -25,103 +26,104 @@ public class Table : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         RotateOrderVisuals();
         OrderComplete();
 
     }
 
-    private void OnTriggerEnter(Collider collider) {
-       //Checks If the items on the plate are the correct items.
-            switch(collider.tag){
-                  case "Kebab":
-            requestedItems[0] = false;
-            break;
+    private void OnTriggerEnter(Collider collider)
+    {
+        //Checks If the items on the plate are the correct items.
+        switch (collider.tag)
+        {
+            case "Kebab":
+                requestedItems[0] = false;
+                break;
             case "Porkchop":
-            requestedItems[1] = false;
-            break;
+                requestedItems[1] = false;
+                break;
             case "Steak":
-            requestedItems[2] = false;
-            break;
+                requestedItems[2] = false;
+                break;
             case "Orange":
-            requestedItems[3] = false;
-            break;
+                requestedItems[3] = false;
+                break;
             case "Tomato":
-            requestedItems[4] = false;
-            break;
-            }
-        
+                requestedItems[4] = false;
+                break;
+        }
+
     }
 
     // Randomizes Order, Shows order rotating above the table
     void GenerateOrder()
     {
         //Gemerates the number of food items the table wants
-        int numFoodItems = Random.Range(1,3);
+        int numFoodItems = Random.Range(1, 3);
 
-        for (x=0;x<numFoodItems;x++)
+        for (x = 0; x < numFoodItems; x++)
         {
             GameObject item;
-            
-            int randomOrder = Random.Range(0,menuItems.Length);
 
-           item = Instantiate(menuItems[randomOrder], spawnPoints[x].transform.position, spawnPoints[x].transform.rotation);
-           item.transform.SetParent(spawnPoints[x].transform);
-           
-         //Checks the orders tag and sets the table to what item it needs to complete the order
-         foodItem = item.tag;
-         CheckOrderFoods();
+            int randomOrder = Random.Range(0, menuItems.Length);
+
+            item = Instantiate(menuItems[randomOrder], spawnPoints[x].transform.position, spawnPoints[x].transform.rotation);
+            item.transform.SetParent(spawnPoints[x].transform);
+
+            //Checks the orders tag and sets the table to what item it needs to complete the order
+            foodItem = item.tag;
+            CheckOrderFoods();
         }
-        
+
         StartCoroutine(OrderTimer());
-        
+
 
     }
 
     //Rotates the food items above the table
     void RotateOrderVisuals()
     {
-        spawnPoints[0].transform.RotateAround(rotateAround.transform.position,Vector3.down, rotateSpeed *Time.deltaTime);
-        spawnPoints[1].transform.RotateAround(rotateAround.transform.position,Vector3.down, rotateSpeed *Time.deltaTime);
-        spawnPoints[2].transform.RotateAround(rotateAround.transform.position,Vector3.down, rotateSpeed *Time.deltaTime);
+        spawnPoints[0].transform.RotateAround(rotateAround.transform.position, Vector3.down, rotateSpeed * Time.deltaTime);
+        spawnPoints[1].transform.RotateAround(rotateAround.transform.position, Vector3.down, rotateSpeed * Time.deltaTime);
+        spawnPoints[2].transform.RotateAround(rotateAround.transform.position, Vector3.down, rotateSpeed * Time.deltaTime);
     }
 
     void CheckOrderFoods()
     {
-        
-        switch(foodItem){
+
+        switch (foodItem)
+        {
             case "Kebab":
-            requestedItems[0] = true;
-            break;
+                requestedItems[0] = true;
+                break;
             case "Porkchop":
-            requestedItems[1] = true;
-            break;
+                requestedItems[1] = true;
+                break;
             case "Steak":
-            requestedItems[2] = true;
-            break;
+                requestedItems[2] = true;
+                break;
             case "Orange":
-            requestedItems[3] = true;
-            break;
+                requestedItems[3] = true;
+                break;
             case "Tomato":
-            requestedItems[4] = true;
-            break;
+                requestedItems[4] = true;
+                break;
         }
     }
 
     //Checks if all the items are all taken
     void OrderComplete()
     {
-        
-        if(!requestedItems.Contains(true))
+
+        if (!requestedItems.Contains(true))
         {
             orderCompleted = true;
             //Debug.Log("Order Complete");
             deleteIcons();
             checkMark.gameObject.SetActive(true);
-            if (orderGenerated == false)
-            {
-            StartCoroutine(OrderCooldown());
-            }
+            StartCoroutine(OrderCompletedTimer());
+
         }
     }
 
@@ -130,50 +132,42 @@ public class Table : MonoBehaviour
     {
         if (spawnPoints[0].transform.childCount > 0 || orderFailed == true)
         {
-             Destroy(spawnPoints[0].transform.GetChild(0).gameObject);
+            Destroy(spawnPoints[0].transform.GetChild(0).gameObject);
         }
-        
+
         if (spawnPoints[1].transform.childCount > 0 || orderFailed == true)
         {
-             Destroy(spawnPoints[1].transform.GetChild(0).gameObject);
+            Destroy(spawnPoints[1].transform.GetChild(0).gameObject);
         }
-        
+
         if (spawnPoints[2].transform.childCount > 0 || orderFailed == true)
         {
-             Destroy(spawnPoints[2].transform.GetChild(0).gameObject);
+            Destroy(spawnPoints[2].transform.GetChild(0).gameObject);
         }
-       
-       
+
+
     }
 
     IEnumerator OrderTimer()
     {
         yield return new WaitForSeconds(orderTime);
-        if(orderCompleted == false)
+        if (orderCompleted == false)
         {
+            boxColl.isTrigger = false;
             orderFailed = true;
-            //Destroy(gameObject);
-            deleteIcons();
-            Debug.Log("Order Failed");
-            orderGenerated = false;
-             StartCoroutine(OrderCooldown());
+            //deleteIcons();
+            incorrectMark.gameObject.SetActive(true);
+            StartCoroutine(OrderCompletedTimer());
+            //Debug.Log("Order Failed");
+            //StartCoroutine(OrderCooldown());
         }
-        
-
     }
 
-    IEnumerator OrderCooldown()
+    IEnumerator OrderCompletedTimer()
     {
-        timeBetweenOrder = Random.Range(2,6);
-        yield return new WaitForSeconds(timeBetweenOrder);
-        checkMark.gameObject.SetActive(false);
-        orderCompleted = false;
-        if (orderGenerated == false)
-        {
-        GenerateOrder();
-        orderGenerated = true;
-        }
-        //StartCoroutine(OrderTimer());
-        
+        yield return new WaitForSeconds(5);
+        Destroy(gameObject);
     }
+
+
 }

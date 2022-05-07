@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Talbe 0 ON");
+            //Debug.Log("Talbe 0 ON");
             Debug.DrawRay(tableSpawnPts[0].transform.position, transform.TransformDirection(Vector3.up) * 2f, Color.green);
             StartCoroutine(tableCooldown(0));
 

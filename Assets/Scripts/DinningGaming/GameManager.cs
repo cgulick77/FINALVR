@@ -12,10 +12,10 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(table, tableSpawnPts[0].transform.position, tableSpawnPts[0].transform.rotation);
-        Instantiate(table, tableSpawnPts[1].transform.position, tableSpawnPts[1].transform.rotation);
-        Instantiate(table, tableSpawnPts[2].transform.position, tableSpawnPts[2].transform.rotation);
-        Instantiate(table, tableSpawnPts[3].transform.position, tableSpawnPts[3].transform.rotation);
+        // Instantiate(table, tableSpawnPts[0].transform.position, tableSpawnPts[0].transform.rotation);
+        // Instantiate(table, tableSpawnPts[1].transform.position, tableSpawnPts[1].transform.rotation);
+        // Instantiate(table, tableSpawnPts[2].transform.position, tableSpawnPts[2].transform.rotation);
+        // Instantiate(table, tableSpawnPts[3].transform.position, tableSpawnPts[3].transform.rotation);
     }
 
     // Update is called once per frame
@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            Debug.Log("Talbe 0 ON");
             Debug.DrawRay(tableSpawnPts[0].transform.position, transform.TransformDirection(Vector3.up) * 2f, Color.green);
             StartCoroutine(tableCooldown(0));
 

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Computer : MonoBehaviour
 {
     public static bool JobActivated;
+    public GameObject computerOn;
     // Start is called before the first frame update
     void Start()
     {

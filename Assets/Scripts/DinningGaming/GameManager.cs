@@ -21,7 +21,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GameStart();
+        if (Computer.JobActivated == true)
+        {
+            GameStart();
+        }
+        
         // for (i = 0; i < tableSpawnPts.Length;++i)
         // {
 

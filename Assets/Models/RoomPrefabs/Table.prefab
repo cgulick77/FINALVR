@@ -2297,7 +2297,7 @@ MonoBehaviour:
   foodItem: 
   plateItems: 
   requestedItems: 0000000000
-  checkMark: {fileID: 5080972281479213860}
+  checkMark: {fileID: 1218567403244846034, guid: 60221f2f7af873f4fabe111a5aebeafb, type: 3}
   incorrectMark: {fileID: 4541610427611205665}
   orderCompleted: 0
   orderFailed: 0

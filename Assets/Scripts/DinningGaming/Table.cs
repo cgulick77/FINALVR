@@ -46,11 +46,14 @@ public class Table : MonoBehaviour
             case "Steak":
                 requestedItems[2] = false;
                 break;
-            case "Orange":
+            case "Squid":
                 requestedItems[3] = false;
                 break;
-            case "Tomato":
+            case "Sushi":
                 requestedItems[4] = false;
+                break;
+            case "Salmon":
+                requestedItems[5] = false;
                 break;
         }
 
@@ -103,11 +106,14 @@ public class Table : MonoBehaviour
             case "Steak":
                 requestedItems[2] = true;
                 break;
-            case "Orange":
+            case "Squid":
                 requestedItems[3] = true;
                 break;
-            case "Tomato":
+            case "Sushi":
                 requestedItems[4] = true;
+                break;
+            case "Salmon":
+                requestedItems[5] = true;
                 break;
         }
     }

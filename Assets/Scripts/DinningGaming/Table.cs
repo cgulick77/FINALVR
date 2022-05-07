@@ -55,6 +55,24 @@ public class Table : MonoBehaviour
             case "Salmon":
                 requestedItems[5] = false;
                 break;
+             case "Soda":
+                requestedItems[6] = false;
+                break;
+             case "Coffee":
+                requestedItems[7] = false;
+                break;
+             case "Lemonade":
+                requestedItems[8] = false;
+                break;
+            case "Pie":
+                requestedItems[9] = false;
+                break;
+            case "Donut":
+                requestedItems[10] = false;
+                break;
+            case "IceCream":
+                requestedItems[11] = false;
+                break;
         }
 
     }
@@ -71,7 +89,7 @@ public class Table : MonoBehaviour
 
             int randomOrder = Random.Range(0, menuItems.Length);
 
-            item = Instantiate(menuItems[randomOrder], spawnPoints[x].transform.position, spawnPoints[x].transform.rotation);
+            item = Instantiate(menuItems[randomOrder], spawnPoints[x].transform.position, Quaternion.identity);
             item.transform.SetParent(spawnPoints[x].transform);
 
             //Checks the orders tag and sets the table to what item it needs to complete the order
@@ -114,6 +132,24 @@ public class Table : MonoBehaviour
                 break;
             case "Salmon":
                 requestedItems[5] = true;
+                break;
+             case "Soda":
+                requestedItems[6] = true;
+                break;
+             case "Coffee":
+                requestedItems[7] = true;
+                break;
+             case "Lemonade":
+                requestedItems[8] = true;
+                break;
+             case "Pie":
+                requestedItems[9] = true;
+                break;
+            case "Donut":
+                requestedItems[10] = true;
+                break;
+            case "IceCream":
+                requestedItems[11] = true;
                 break;
         }
     }

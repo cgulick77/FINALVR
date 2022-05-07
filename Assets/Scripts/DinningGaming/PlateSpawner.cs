@@ -28,7 +28,7 @@ public class PlateSpawner : MonoBehaviour
 
     IEnumerator spawnPlate()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         Instantiate(plate, spawnPoint.transform.position, spawnPoint.transform.rotation);
         StopAllCoroutines();
     }

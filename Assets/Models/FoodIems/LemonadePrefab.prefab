@@ -90,7 +90,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4193926086153003928}
-  - component: {fileID: 5264630852315663292}
   m_Layer: 0
   m_Name: LemonadePrefab
   m_TagString: Untagged
@@ -120,22 +119,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &5264630852315663292
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3564600352916683042}
-  serializedVersion: 2
-  m_Mass: 2.5
-  m_Drag: 2.5
-  m_AngularDrag: 0.8
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &4206245808617337824
 GameObject:
   m_ObjectHideFlags: 0

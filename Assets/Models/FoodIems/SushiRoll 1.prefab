@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3828345323172814965
+--- !u!1 &6656840157821256781
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,45 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5446871442524238670}
-  - component: {fileID: 7151720518394202628}
-  - component: {fileID: 5937355963431480976}
+  - component: {fileID: 6280841934291181303}
+  - component: {fileID: 6955198173497430354}
+  - component: {fileID: 5143432564476896664}
+  - component: {fileID: 396413619810725968}
   m_Layer: 0
-  m_Name: default
+  m_Name: SushiRoll 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5446871442524238670
+--- !u!4 &6280841934291181303
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3828345323172814965}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_GameObject: {fileID: 6656840157821256781}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: -0.7071068}
+  m_LocalPosition: {x: -1.62, y: -3.43, z: 6.24}
+  m_LocalScale: {x: 9.649836, y: 14.292035, z: 9.2006}
   m_Children: []
-  m_Father: {fileID: 4892906481456595478}
+  m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &7151720518394202628
+--- !u!33 &6955198173497430354
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3828345323172814965}
-  m_Mesh: {fileID: -2432090755550338912, guid: 15a4e08b0a84a264dbf24c2173eb84c0, type: 3}
---- !u!23 &5937355963431480976
+  m_GameObject: {fileID: 6656840157821256781}
+  m_Mesh: {fileID: 765838999868646431, guid: 6d6f7c016b9a38d4c8ac2785092506a6, type: 3}
+--- !u!23 &5143432564476896664
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3828345323172814965}
+  m_GameObject: {fileID: 6656840157821256781}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -59,8 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8373584595250389242, guid: 15a4e08b0a84a264dbf24c2173eb84c0, type: 3}
-  - {fileID: -2310514774154243031, guid: 15a4e08b0a84a264dbf24c2173eb84c0, type: 3}
+  - {fileID: 2100000, guid: 5b82a5e9a44d5104d9e4cd6ddc72c473, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -82,34 +82,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &5236780549185280172
-GameObject:
+--- !u!54 &396413619810725968
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4892906481456595478}
-  m_Layer: 0
-  m_Name: IceCreamPrefab
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4892906481456595478
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5236780549185280172}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.976, y: 0.539, z: 2.896}
-  m_LocalScale: {x: 0.0013, y: 0.0013, z: 0.0013}
-  m_Children:
-  - {fileID: 5446871442524238670}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 6656840157821256781}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

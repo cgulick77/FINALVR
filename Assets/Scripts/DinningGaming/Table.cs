@@ -20,15 +20,21 @@ public class Table : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GenerateOrder();
+        if (Score.remainingOrder !=0)
+        {
+            GenerateOrder();
+        }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        RotateOrderVisuals();
-        OrderComplete();
+        
+            RotateOrderVisuals();
+            OrderComplete();
+        
+        
 
     }
 

@@ -7,8 +7,10 @@ public class Score : MonoBehaviour
 {
     public static int correctOrder;
     public static int incorrectOrder;
+    public static int remainingOrder;
     public Text rOrder;
     public Text iOrder;
+    public Text roOrder;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +21,7 @@ public class Score : MonoBehaviour
     void Update()
     {
         rOrder.text = "" + correctOrder;
-        iOrder.text = "" + correctOrder;
+        iOrder.text = "" + incorrectOrder;
+        roOrder.text = " " + remainingOrder;
     }
 }

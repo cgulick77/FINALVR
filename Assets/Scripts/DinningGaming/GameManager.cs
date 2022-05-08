@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Score.remainingOrder = 5;
         // Instantiate(table, tableSpawnPts[0].transform.position, tableSpawnPts[0].transform.rotation);
         // Instantiate(table, tableSpawnPts[1].transform.position, tableSpawnPts[1].transform.rotation);
         // Instantiate(table, tableSpawnPts[2].transform.position, tableSpawnPts[2].transform.rotation);
@@ -21,7 +22,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Computer.JobActivated == true)
+        if (Computer.JobActivated == true && Score.remainingOrder !=0)
         {
             GameStart();
         }
@@ -98,6 +99,11 @@ public class GameManager : MonoBehaviour
     IEnumerator tableCooldown(int tableNum)
     {
         yield return new WaitForSeconds(3);
+        if (Score.remainingOrder != 0)
+        {
+            Score.remainingOrder -=1;
+        }
+        
         Instantiate(table, tableSpawnPts[tableNum].transform.position, tableSpawnPts[tableNum].transform.rotation);
         StopAllCoroutines();
         //StopCoroutine(tableCooldown(tableNum));

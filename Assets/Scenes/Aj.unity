@@ -11772,6 +11772,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3093761711094635416, guid: ce4e2ad65a9bdf740903bce38c64d653, type: 3}
+      propertyPath: rightDirection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3093761711094635416, guid: ce4e2ad65a9bdf740903bce38c64d653, type: 3}
+      propertyPath: backwardDirection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3093761712724842687, guid: ce4e2ad65a9bdf740903bce38c64d653, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.2640245
@@ -11791,6 +11799,14 @@ PrefabInstance:
     - target: {fileID: 3093761712724842687, guid: ce4e2ad65a9bdf740903bce38c64d653, type: 3}
       propertyPath: m_LocalPosition.z
       value: -6.045
+      objectReference: {fileID: 0}
+    - target: {fileID: 3093761712788174962, guid: ce4e2ad65a9bdf740903bce38c64d653, type: 3}
+      propertyPath: rightDirection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3093761712788174962, guid: ce4e2ad65a9bdf740903bce38c64d653, type: 3}
+      propertyPath: backwardDirection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3093761712795905541, guid: ce4e2ad65a9bdf740903bce38c64d653, type: 3}
       propertyPath: m_Name
@@ -11839,6 +11855,14 @@ PrefabInstance:
     - target: {fileID: 3093761712795905542, guid: ce4e2ad65a9bdf740903bce38c64d653, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3093761713010325731, guid: ce4e2ad65a9bdf740903bce38c64d653, type: 3}
+      propertyPath: rightDirection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3093761713010325731, guid: ce4e2ad65a9bdf740903bce38c64d653, type: 3}
+      propertyPath: backwardDirection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce4e2ad65a9bdf740903bce38c64d653, type: 3}

@@ -128,6 +128,17 @@ public class Plate : MonoBehaviour
                 //foodLocation++;
 
             break;
+             case "Soda":
+
+                collider.transform.SetParent(parent);
+                collider.transform.position = foodPoints[foodLocation].transform.position;
+                collider.gameObject.transform.position = foodPoints[foodLocation].transform.position;
+                // collider.attachedRigidbody.isKinematic = true;
+                // collider.attachedRigidbody.useGravity = false;
+                // collider.attachedRigidbody.detectCollisions = false;
+                //foodLocation++;
+
+            break;
              case "Donut":
 
                 collider.transform.SetParent(parent);

@@ -223,6 +223,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 948230937684060103, guid: e7bf9d360458fc94fb2d257c87f52fdb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.425774
+      objectReference: {fileID: 0}
+    - target: {fileID: 948230937684060103, guid: e7bf9d360458fc94fb2d257c87f52fdb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 13.1422
+      objectReference: {fileID: 0}
+    - target: {fileID: 948230938866316052, guid: e7bf9d360458fc94fb2d257c87f52fdb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5478696
+      objectReference: {fileID: 0}
+    - target: {fileID: 948230938866316052, guid: e7bf9d360458fc94fb2d257c87f52fdb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10.851
+      objectReference: {fileID: 0}
     - target: {fileID: 7184311166694535639, guid: e7bf9d360458fc94fb2d257c87f52fdb, type: 3}
       propertyPath: m_Name
       value: Restaurant

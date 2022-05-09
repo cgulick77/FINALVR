@@ -10,10 +10,11 @@ public class GameManager : MonoBehaviour
     private bool table1, table2, table3, table4;
     [SerializeField] LayerMask layerMask;
     public static bool gameEnd;
+    public static int totalOrder = 2;
     // Start is called before the first frame update
     void Start()
     {
-        Score.remainingOrder = 25;
+        
         // Instantiate(table, tableSpawnPts[0].transform.position, tableSpawnPts[0].transform.rotation);
         // Instantiate(table, tableSpawnPts[1].transform.position, tableSpawnPts[1].transform.rotation);
         // Instantiate(table, tableSpawnPts[2].transform.position, tableSpawnPts[2].transform.rotation);
@@ -26,6 +27,12 @@ public class GameManager : MonoBehaviour
         if (Computer.JobActivated == true && Score.remainingOrder !=0)
         {
             GameStart();
+        }
+
+        if (Score.remainingOrder == 0)
+        {
+            Computer.JobActivated = false;
+            //Score.remainingOrder = totalOrder;
         }
         
         // for (i = 0; i < tableSpawnPts.Length;++i)

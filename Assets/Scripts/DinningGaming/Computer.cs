@@ -6,6 +6,7 @@ public class Computer : MonoBehaviour
 {
     public static bool JobActivated;
     public GameObject computerOn;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -18,9 +19,14 @@ public class Computer : MonoBehaviour
     {
         if (JobActivated == true)
             {
+                Score.remainingOrder = GameManager.totalOrder;
                 computerOn.SetActive(true);
                 gameObject.SetActive(false);
             }
+        else{
+            computerOn.SetActive(false);
+            gameObject.SetActive(true);
+        }
     }
 
     private void OnTriggerEnter(Collider collider) {
@@ -28,8 +34,7 @@ public class Computer : MonoBehaviour
         {
             JobActivated = true;
             
-            
-            Debug.Log("Card");
+            //Debug.Log("Card");
         }
     }
 }

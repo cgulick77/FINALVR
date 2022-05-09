@@ -23,7 +23,7 @@ public class Plate : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider collider) {
-    if (foodLocation <= 3)
+    if (foodLocation != 1)
     {
     switch(collider.tag){
             case "Kebab":

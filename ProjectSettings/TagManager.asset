@@ -30,6 +30,7 @@ TagManager:
   - IceCream
   - Card
   - Soda
+  - Donut
   layers:
   - Default
   - TransparentFX
@@ -40,7 +41,7 @@ TagManager:
   - Ground
   - Food
   - Table
-  - 
+  - Plate
   - 
   - 
   - 

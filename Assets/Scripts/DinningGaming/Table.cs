@@ -20,15 +20,21 @@ public class Table : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GenerateOrder();
+        if (Score.remainingOrder !=0)
+        {
+            GenerateOrder();
+        }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        RotateOrderVisuals();
-        OrderComplete();
+        
+            RotateOrderVisuals();
+            OrderComplete();
+        
+        
 
     }
 
@@ -160,6 +166,7 @@ public class Table : MonoBehaviour
 
         if (!requestedItems.Contains(true))
         {
+            //StartCoroutine(addScore());
             orderCompleted = true;
             //Debug.Log("Order Complete");
             deleteIcons();
@@ -195,11 +202,12 @@ public class Table : MonoBehaviour
         yield return new WaitForSeconds(orderTime);
         if (orderCompleted == false)
         {
+            //StartCoroutine(minusScore());
             boxColl.isTrigger = false;
             orderFailed = true;
             //deleteIcons();
             incorrectMark.gameObject.SetActive(true);
-            StartCoroutine(OrderCompletedTimer());
+            StartCoroutine(OrderFailTimer());
             //Debug.Log("Order Failed");
             //StartCoroutine(OrderCooldown());
         }
@@ -208,7 +216,33 @@ public class Table : MonoBehaviour
     IEnumerator OrderCompletedTimer()
     {
         yield return new WaitForSeconds(5);
+        // StopAllCoroutines();
+        // StartCoroutine(addScore());
+        Score.correctOrder += 1;
         Destroy(gameObject);
+    }
+
+    IEnumerator OrderFailTimer()
+    {
+        yield return new WaitForSeconds(5);
+        // StopAllCoroutines();
+        // StartCoroutine(minusScore());
+        Score.incorrectOrder += 1;
+        Destroy(gameObject);
+    }
+
+    IEnumerator addScore()
+    {
+        yield return new WaitForSeconds(.1f);
+         Score.correctOrder += 1;
+         StopCoroutine(addScore());
+    }
+
+    IEnumerator minusScore()
+    {
+         yield return new WaitForSeconds(.1f);
+         Score.incorrectOrder += 1;
+         StopCoroutine(minusScore());
     }
 
 

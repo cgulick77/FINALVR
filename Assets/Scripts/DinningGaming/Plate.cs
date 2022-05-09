@@ -34,7 +34,7 @@ public class Plate : MonoBehaviour
                 // collider.attachedRigidbody.isKinematic = true;
                 // collider.attachedRigidbody.useGravity = false;
                 // collider.attachedRigidbody.detectCollisions = false;
-                foodLocation++;
+                //foodLocation++;
 
             break;
             case "Porkchop":
@@ -44,7 +44,7 @@ public class Plate : MonoBehaviour
                 // collider.attachedRigidbody.isKinematic = true;
                 // collider.attachedRigidbody.useGravity = false;
                 // collider.attachedRigidbody.detectCollisions = false;
-                foodLocation++;
+                //foodLocation++;
             break;
             case "Steak":
                  collider.transform.SetParent(parent);
@@ -53,7 +53,7 @@ public class Plate : MonoBehaviour
                 // collider.attachedRigidbody.isKinematic = true;
                 // collider.attachedRigidbody.useGravity = false;
                 // collider.attachedRigidbody.detectCollisions = false;
-                foodLocation++;
+                //foodLocation++;
             break;
             case "Orange":
                 collider.transform.SetParent(parent);
@@ -62,7 +62,7 @@ public class Plate : MonoBehaviour
                 // collider.attachedRigidbody.isKinematic = true;
                 // collider.attachedRigidbody.useGravity = false;
                 // collider.attachedRigidbody.detectCollisions = false;
-                foodLocation++;
+                //foodLocation++;
             break;
             case "Tomato":
               collider.transform.SetParent(parent);
@@ -71,7 +71,7 @@ public class Plate : MonoBehaviour
                 // collider.attachedRigidbody.isKinematic = true;
                 // collider.attachedRigidbody.useGravity = false;
                 // collider.attachedRigidbody.detectCollisions = false;
-                foodLocation++;
+                //foodLocation++;
             break;
              case "Salmon":
 
@@ -81,7 +81,7 @@ public class Plate : MonoBehaviour
                 // collider.attachedRigidbody.isKinematic = true;
                 // collider.attachedRigidbody.useGravity = false;
                 // collider.attachedRigidbody.detectCollisions = false;
-                foodLocation++;
+                //foodLocation++;
 
             break;
              case "Sushi":
@@ -92,7 +92,7 @@ public class Plate : MonoBehaviour
                 // collider.attachedRigidbody.isKinematic = true;
                 // collider.attachedRigidbody.useGravity = false;
                 // collider.attachedRigidbody.detectCollisions = false;
-                foodLocation++;
+                //foodLocation++;
 
             break;
              case "Squid":
@@ -103,7 +103,7 @@ public class Plate : MonoBehaviour
                 // collider.attachedRigidbody.isKinematic = true;
                 // collider.attachedRigidbody.useGravity = false;
                 // collider.attachedRigidbody.detectCollisions = false;
-                foodLocation++;
+                //foodLocation++;
 
             break;
              case "Lemonade":
@@ -114,10 +114,10 @@ public class Plate : MonoBehaviour
                 // collider.attachedRigidbody.isKinematic = true;
                 // collider.attachedRigidbody.useGravity = false;
                 // collider.attachedRigidbody.detectCollisions = false;
-                foodLocation++;
+                //foodLocation++;
 
             break;
-             case "Water":
+             case "Coffee":
 
                 collider.transform.SetParent(parent);
                 collider.transform.position = foodPoints[foodLocation].transform.position;
@@ -125,10 +125,10 @@ public class Plate : MonoBehaviour
                 // collider.attachedRigidbody.isKinematic = true;
                 // collider.attachedRigidbody.useGravity = false;
                 // collider.attachedRigidbody.detectCollisions = false;
-                foodLocation++;
+                //foodLocation++;
 
             break;
-             case "Cake":
+             case "Soda":
 
                 collider.transform.SetParent(parent);
                 collider.transform.position = foodPoints[foodLocation].transform.position;
@@ -136,7 +136,18 @@ public class Plate : MonoBehaviour
                 // collider.attachedRigidbody.isKinematic = true;
                 // collider.attachedRigidbody.useGravity = false;
                 // collider.attachedRigidbody.detectCollisions = false;
-                foodLocation++;
+                //foodLocation++;
+
+            break;
+             case "Donut":
+
+                collider.transform.SetParent(parent);
+                collider.transform.position = foodPoints[foodLocation].transform.position;
+                collider.gameObject.transform.position = foodPoints[foodLocation].transform.position;
+                // collider.attachedRigidbody.isKinematic = true;
+                // collider.attachedRigidbody.useGravity = false;
+                // collider.attachedRigidbody.detectCollisions = false;
+                //foodLocation++;
 
             break;
              case "Pie":
@@ -147,7 +158,7 @@ public class Plate : MonoBehaviour
                 // collider.attachedRigidbody.isKinematic = true;
                 // collider.attachedRigidbody.useGravity = false;
                 // collider.attachedRigidbody.detectCollisions = false;
-                foodLocation++;
+                //foodLocation++;
 
             break;
              case "IceCream":
@@ -158,7 +169,7 @@ public class Plate : MonoBehaviour
                 // collider.attachedRigidbody.isKinematic = true;
                 // collider.attachedRigidbody.useGravity = false;
                 // collider.attachedRigidbody.detectCollisions = false;
-                foodLocation++;
+                //foodLocation++;
 
             break;
 

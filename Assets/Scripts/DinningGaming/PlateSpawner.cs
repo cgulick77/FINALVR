@@ -6,6 +6,7 @@ public class PlateSpawner : MonoBehaviour
 {
     public GameObject plate;
     public GameObject spawnPoint;
+    public GameObject sp2;
     [SerializeField] LayerMask layerMask;
     // Start is called before the first frame update
     void Start()
@@ -29,7 +30,7 @@ public class PlateSpawner : MonoBehaviour
     IEnumerator spawnPlate()
     {
         yield return new WaitForSeconds(1);
-        Instantiate(plate, spawnPoint.transform.position, spawnPoint.transform.rotation);
+        Instantiate(plate, sp2.transform.position, sp2.transform.rotation);
         StopAllCoroutines();
     }
 }

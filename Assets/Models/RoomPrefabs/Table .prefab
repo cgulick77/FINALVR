@@ -850,6 +850,7 @@ GameObject:
   - component: {fileID: 6470707022385247850}
   - component: {fileID: 2871006713434873257}
   - component: {fileID: 4283994419044039067}
+  - component: {fileID: 5738829610261192939}
   m_Layer: 8
   m_Name: 'Table '
   m_TagString: Table
@@ -1022,6 +1023,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.9594548, y: 0.31104207, z: 1.5157357}
   m_Center: {x: 0.0075449953, y: 0.96605885, z: 0.016957402}
+--- !u!65 &5738829610261192939
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3163837319751965801}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.857079, y: 0.74921024, z: 2.3970509}
+  m_Center: {x: 0.0023927689, y: 0.3731097, z: 0.04788488}
 --- !u!1 &3224391817449522894
 GameObject:
   m_ObjectHideFlags: 0

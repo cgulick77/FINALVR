@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     private bool table1, table2, table3, table4;
     [SerializeField] LayerMask layerMask;
     public static bool gameEnd;
-    public static int totalOrder = 2;
+    public static int totalOrder = 25;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,11 +29,7 @@ public class GameManager : MonoBehaviour
             GameStart();
         }
 
-        if (Score.remainingOrder == 0)
-        {
-            Computer.JobActivated = false;
-            //Score.remainingOrder = totalOrder;
-        }
+       
         
         // for (i = 0; i < tableSpawnPts.Length;++i)
         // {

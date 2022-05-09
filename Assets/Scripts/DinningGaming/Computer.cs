@@ -24,8 +24,7 @@ public class Computer : MonoBehaviour
                 gameObject.SetActive(false);
             }
         else{
-            computerOn.SetActive(false);
-            gameObject.SetActive(true);
+           
         }
     }
 

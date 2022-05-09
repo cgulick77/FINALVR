@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 3307860178032012916}
   m_Layer: 0
   m_Name: FoodCollider
-  m_TagString: Untagged
+  m_TagString: Donut
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

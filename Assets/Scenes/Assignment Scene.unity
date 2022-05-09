@@ -12193,6 +12193,10 @@ PrefabInstance:
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4993959207749153665, guid: 96871e33bf85b65418a7ad21955707c3, type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5300581322923379815, guid: 96871e33bf85b65418a7ad21955707c3, type: 3}
       propertyPath: m_Name
       value: Card (1)

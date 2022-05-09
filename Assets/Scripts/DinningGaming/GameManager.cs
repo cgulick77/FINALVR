@@ -9,10 +9,11 @@ public class GameManager : MonoBehaviour
     public GameObject table;
     private bool table1, table2, table3, table4;
     [SerializeField] LayerMask layerMask;
+    public static bool gameEnd;
     // Start is called before the first frame update
     void Start()
     {
-        Score.remainingOrder = 5;
+        Score.remainingOrder = 25;
         // Instantiate(table, tableSpawnPts[0].transform.position, tableSpawnPts[0].transform.rotation);
         // Instantiate(table, tableSpawnPts[1].transform.position, tableSpawnPts[1].transform.rotation);
         // Instantiate(table, tableSpawnPts[2].transform.position, tableSpawnPts[2].transform.rotation);

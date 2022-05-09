@@ -10,6 +10,7 @@ public class Plate : MonoBehaviour
     private bool posOne,posTwo,posThree;
     public Collider plateCol;
     public bool[] foodOnPlate;
+    public LayerMask groundLayer;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,11 @@ public class Plate : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider collider) {
+        if (collider.CompareTag("Floor"))
+        {
+            Destroy(gameObject);
+        }
+        
     if (foodLocation != 1)
     {
     switch(collider.tag){

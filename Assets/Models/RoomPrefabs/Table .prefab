@@ -996,7 +996,7 @@ MonoBehaviour:
   - {fileID: 6432497967434680982}
   - {fileID: 6645026011016574873}
   rotateAround: {fileID: 7477646465184188371}
-  orderTime: 30
+  orderTime: 50
   numberOfOrders: 5
   timeBetweenOrder: 0
   x: 0

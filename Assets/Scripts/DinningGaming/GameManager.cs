@@ -15,10 +15,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         
-        // Instantiate(table, tableSpawnPts[0].transform.position, tableSpawnPts[0].transform.rotation);
-        // Instantiate(table, tableSpawnPts[1].transform.position, tableSpawnPts[1].transform.rotation);
-        // Instantiate(table, tableSpawnPts[2].transform.position, tableSpawnPts[2].transform.rotation);
-        // Instantiate(table, tableSpawnPts[3].transform.position, tableSpawnPts[3].transform.rotation);
+
     }
 
     // Update is called once per frame
@@ -29,28 +26,13 @@ public class GameManager : MonoBehaviour
             GameStart();
         }
 
-       
-        
-        // for (i = 0; i < tableSpawnPts.Length;++i)
-        // {
-
-        //     if (Physics.Raycast(tableSpawnPts[i].transform.position, transform.TransformDirection(Vector3.up), out RaycastHit hitInfo, 2f, layerMask))
-        //     {
-        //         Debug.DrawRay(tableSpawnPts[i].transform.position, transform.TransformDirection(Vector3.up) * 2f, Color.blue);
-        //     }
-        //     else
-        //     {
-
-        //         Debug.DrawRay(tableSpawnPts[i].transform.position, transform.TransformDirection(Vector3.up) * 2f, Color.green); 
-        //         Instantiate(table, tableSpawnPts[i].transform.position, tableSpawnPts[i].transform.rotation);
-        //         StartCoroutine(tableCooldown());
-        //     }
-
-        // }
     }
 
     void GameStart()
     {
+        //Checks each of the 4 spawn points if there is a table on or off the spawn point
+        //Uses a Ray to check  for a table
+        //If there is no table starts coroutine to spawn table.
         if (Physics.Raycast(tableSpawnPts[0].transform.position, transform.TransformDirection(Vector3.up), out RaycastHit hitInfo1, 2f, layerMask))
         {
             Debug.DrawRay(tableSpawnPts[0].transform.position, transform.TransformDirection(Vector3.up) * 2f, Color.blue);
@@ -100,6 +82,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //Spawns tables based on the spawn points location
     IEnumerator tableCooldown(int tableNum)
     {
         yield return new WaitForSeconds(3);

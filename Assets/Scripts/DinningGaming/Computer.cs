@@ -17,6 +17,7 @@ public class Computer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Activated sets the current orders to the total number of orders, sets the "Off computer game object" inactive and activated the "On Computer Object"
         if (JobActivated == true)
             {
                 Score.remainingOrder = GameManager.totalOrder;
@@ -28,6 +29,7 @@ public class Computer : MonoBehaviour
         }
     }
 
+    //If the computer collides with a "Card", activated the computer
     private void OnTriggerEnter(Collider collider) {
         if (collider.CompareTag("Card"))
         {

@@ -54,10 +54,7 @@ public class FoodShower : MonoBehaviour
            onPlate = true;
        } 
 
-       //if (collider.CompareTag("Player"))
-       //{
-       //    playerNearStand = true;
-       //}
+      
    }
 
     //Changes the direction its firing depending on which settig is clicked.
